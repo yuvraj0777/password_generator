@@ -61,7 +61,13 @@ function App() {
               readOnly
               ref={passwordRef}
             />
-            <button className="px-1 py-2 rounded-md" onClick={copyPassword}>
+            <button className="px-1 py-2 rounded-md" onClick={(e) => {
+              copyPassword()
+              e.target.style.color = "blue";
+              setTimeout(() => {
+                e.target.style.color = "";
+              }, 1000);
+              }}>
               Copy
             </button>
           </div>
